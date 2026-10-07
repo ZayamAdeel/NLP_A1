@@ -166,4 +166,5 @@ async def _safe_send(websocket: WebSocket, data: dict):
 
 
 # Serve the simple chat frontend at /
-app.mount("/", StaticFiles(directory="static", html=True), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/", StaticFiles(directory="static", html=True), name="frontend")
